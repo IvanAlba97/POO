@@ -14,6 +14,10 @@ class Fecha {
 		// CONSTRUCTORES
 		explicit Fecha(int dia = 0, int mes = 0, int anno = 0);
 		Fecha(const char*);
+		/**
+		 * No necesitamos constructor de copia porque no estamos usando
+		 * memoria dinámica, asi que nos vale el por defecto.
+		 */
 
 		// OPERADORES
 		Fecha& operator ++();					// ++f -> f.operator++()	(Preincremento)
@@ -25,6 +29,10 @@ class Fecha {
 		Fecha& operator +=(int dias);			// f+=n -> f.operator+=(n)
 		Fecha& operator -=(int dias);			// f-=n -> f.operator-=(n)
 		operator const char*() const;
+		/**
+		 * No necesitamos operador de asignación porque no estamos usando
+		 * memoria dinámica, asi que nos vale el por defecto.
+		 */
 
 		// METODOS OBSERVADORES
 		int dia() const noexcept { return dia_; }
