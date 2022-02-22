@@ -77,7 +77,7 @@ bool operator <(const Cadena&, const Cadena&);
 bool operator <=(const Cadena&, const Cadena&);
 
 // OPERADORES DE INSERCIÓN Y EXTRACCIÓN
-ostream& operator <<(ostream& o, const Cadena& c);
-istream& operator >>(istream& i, Cadena& c);
+ostream& operator <<(ostream& o, const Cadena& c);		// Inserción
+istream& operator >>(istream& i, Cadena& c);			// Extracción
 
 #endif

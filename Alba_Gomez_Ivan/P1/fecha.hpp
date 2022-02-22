@@ -55,7 +55,7 @@ bool operator <(const Fecha&, const Fecha&);
 bool operator <=(const Fecha&, const Fecha&);
 
 // OPERADORES DE INSERCIÓN Y EXTRACCIÓN
-ostream& operator <<(ostream& o, const Fecha& f);
-istream& operator >>(istream& i, Fecha& f);
+ostream& operator <<(ostream& o, const Fecha& f);	// Inserción
+istream& operator >>(istream& i, Fecha& f);			// Extracción
 
 #endif

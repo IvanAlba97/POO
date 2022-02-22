@@ -145,12 +145,12 @@ bool operator <(const Fecha& f1, const Fecha& f2) { return (f2 > f1); }
 
 bool operator <=(const Fecha& f1, const Fecha& f2) { return !(f1 > f2); }	// !(f1 > f2) = (f1 < f2 || f1 == f2)
 
-ostream& operator <<(ostream& o, const Fecha& f) {
+ostream& operator <<(ostream& o, const Fecha& f) {		// Inserción
 	o << f.cadena();
 	return o;
 }
 
-istream& operator >>(std::istream& i, Fecha& f) {
+istream& operator >>(std::istream& i, Fecha& f) {		// Extracción
 	char fecha[11] = "";
 	i.width(11);
 	try {

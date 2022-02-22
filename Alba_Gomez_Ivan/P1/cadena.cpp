@@ -106,12 +106,12 @@ bool operator <(const Cadena& c1, const Cadena& c2) { return strcmp(c1.c_str(), 
 
 bool operator <=(const Cadena& c1, const Cadena& c2) { return strcmp(c1.c_str(), c2.c_str()) <= 0; }
 
-ostream& operator <<(ostream& o, const Cadena& c) {
+ostream& operator <<(ostream& o, const Cadena& c) {		//  Inserción
 	o << c.c_str();
 	return o;
 }
 
-istream& operator >>(istream& i, Cadena& c) {
+istream& operator >>(istream& i, Cadena& c) {			// Extracción
 	char cadena[32] = "";
 	i.width(32);
 	i >> cadena;
