@@ -16,12 +16,12 @@ class Fecha {
 		Fecha(const char*);
 
 		// OPERADORES
-		Fecha& operator ++();				// ++f -> f.operator++()	(Preincremento)
-		Fecha operator ++(int);				// f++ -> f.operator++(0)	(Postincremento)
-		Fecha& operator --();				// --f -> f.operator--()	(Predecremento)
-		Fecha operator --(int);				// f-- -> f.operator--(0)	(Postdecremento)
-		Fecha operator +(int dias) const;	// f+n -> f.operator+(n)
-		Fecha operator -(int dias) const;	// f-n -> f.operator-(n)
+		Fecha& operator ++();					// ++f -> f.operator++()	(Preincremento)
+		Fecha operator ++(int);					// f++ -> f.operator++(0)	(Postincremento)
+		Fecha& operator --();					// --f -> f.operator--()	(Predecremento)
+		Fecha operator --(int);					// f-- -> f.operator--(0)	(Postdecremento)
+		Fecha operator +(int dias) const;		// f+n -> f.operator+(n)
+		Fecha operator -(int dias) const;		// f-n -> f.operator-(n)
 		Fecha& operator +=(int dias);			// f+=n -> f.operator+=(n)
 		Fecha& operator -=(int dias);			// f-=n -> f.operator-=(n)
 		operator const char*() const;
