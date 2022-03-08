@@ -306,6 +306,7 @@ FCTMF_FIXTURE_SUITE_BGN(test_fecha) {
     }
     FCT_TEST_END();
 
+    // En este bloque es donde me da el fallo que hace que aborte el programa
     FCT_TEST_BGN(Fecha - Predecremento) {
       Fecha f(1, 1, 2010);
       const Fecha g(--f);

@@ -112,7 +112,7 @@ Fecha::operator const char *() const {
 	f.tm_mon = mes_ - 1;
 	f.tm_year = anno_ - 1900;
 	mktime(&f);
-	strftime(aux, 40, "%A, %d de %B de %Y", &f);
+	strftime(aux, 40, "%A %d de %B de %Y", &f);
 	return aux;
 }
 

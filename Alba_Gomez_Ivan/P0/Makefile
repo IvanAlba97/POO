@@ -7,7 +7,7 @@ CXXFLAGS = -std=c++17 -g -Wall -pedantic
 #-fmax-errors=15
 #LDFLAGS =
 #ficheros creados
-EJECUTABLES =test-fechacadena-auto test-fechacadena-consola 
+EJECUTABLES = test-fechacadena-auto test-fechacadena-consola 
 OBJETOS = test-fechacadena-auto.o test-fechacadena-consola.o fecha.o cadena.o
 ###
 all:$(EJECUTABLES)
