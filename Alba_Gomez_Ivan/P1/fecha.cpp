@@ -85,7 +85,7 @@ Fecha& Fecha::operator +=(int d) {
 			if(mes_ == 2 && anno_%4 == 0) {		// Bisiesto
 				if(dia_ == 29) { dia_ = 1; mes_++; }
 				else { dia_++; }
-			} else if(diasPorMes[mes_-1] == dia_ && mes_<12) { dia_ = 1; mes_++; }
+			} else if(diasPorMes[mes_-1] == dia_ && mes_ < 12) { dia_ = 1; mes_++; }
 			else if(diasPorMes[mes_-1] == dia_ && mes_ == 12) { dia_ = 1; mes_ = 1; anno_++; }
 			else if(diasPorMes[mes_-1] != dia_) { dia_++; }
 		}
