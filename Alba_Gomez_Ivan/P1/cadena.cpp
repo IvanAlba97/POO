@@ -112,8 +112,8 @@ ostream& operator <<(ostream& o, const Cadena& c) {		//  Inserción
 }
 
 istream& operator >>(istream& i, Cadena& c) {			// Extracción
-	char cadena[32] = "";
-	i.width(32);
+	char cadena[33] = "";
+	i.width(33);
 	i >> cadena;
 	c = cadena;
 	return i;
