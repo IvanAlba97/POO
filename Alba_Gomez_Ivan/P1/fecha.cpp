@@ -130,7 +130,7 @@ bool operator ==(const Fecha& f1, const Fecha& f2) { return (f1.dia() == f2.dia(
 
 bool operator !=(const Fecha& f1, const Fecha& f2) { return !(f1 == f2); }
 
-bool operator>(const Fecha& f1, const Fecha& f2) {
+bool operator >(const Fecha& f1, const Fecha& f2) {
 	if(f1.anno() > f2.anno()) return true;
 	else if(f1.anno() == f2.anno() && f1.mes() > f2.mes()) return true;
 	else if(f1.anno() == f2.anno() && f1.mes() == f2.mes() && f1.dia() > f2.dia()) return true;
