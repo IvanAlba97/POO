@@ -44,7 +44,7 @@ class Usuario {
 		};
 
 		typedef std::map<Numero, Tarjeta*> Tarjetas;
-		typedef std::unordered_map<Articulo*,unsigned> Articulos;
+		typedef std::unordered_map<Articulo*, unsigned> Articulos;
 		Usuario(const Cadena&_id, const Cadena& _nomb, const Cadena& _apell, const Cadena& _direcc, const Clave& _pass);
 		Usuario(const Usuario& that) = delete;
 		Usuario& operator =(const Usuario &) = delete;
@@ -58,7 +58,7 @@ class Usuario {
 		void es_titular_de(const Tarjeta&);		// Se le asocia una tarjeta
 		void no_es_titular_de(Tarjeta&);		// Se desasocia una tarjeta
 		void compra(const Articulo& a, size_t cant = 1);
-		friend std::ostream& operator << (std::ostream& os, const Usuario &u) noexcept;
+		friend std::ostream& operator <<(std::ostream& os, const Usuario& u) noexcept;
 		~Usuario();
 	private:
 		Cadena ID_, nombre_, apell_, direcc_;

@@ -7,10 +7,12 @@
 #include <random>
 #include <iomanip>
 #include <set>
+#include <unordered_set>
+#include "cadena.hpp"
 
 using namespace std;
 
-unordered_set<Cadena> Usuario::registrados;
+//unordered_set<Cadena> Usuario::registrados;
 
 Clave::Clave(const char* p){
 	setlocale(LC_ALL, "");
@@ -36,7 +38,7 @@ Cadena Clave::clave() const { return pass_c; }
 
 Clave::~Clave() {}
 
-Usuario::Usuario(const Cadena&_id, const Cadena& _nomb, const Cadena& _apell, const Cadena& _direcc, const Clave& _pass)
+Usuario::Usuario(const Cadena& _id, const Cadena& _nomb, const Cadena& _apell, const Cadena& _direcc, const Clave& _pass)
  : ID_(_id), nombre_(_nomb), apell_(_apell), direcc_(_direcc), pass_(_pass), n_articulos_(articulos_.size()) {
 	if(!registrados.insert(ID_).second) throw Id_duplicado(ID_);
 }

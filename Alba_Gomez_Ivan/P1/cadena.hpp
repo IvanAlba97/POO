@@ -80,4 +80,19 @@ bool operator <=(const Cadena&, const Cadena&);
 ostream& operator <<(ostream& o, const Cadena& c);		// Inserción
 istream& operator >>(istream& i, Cadena& c);			// Extracción
 
+
+// P2: HASH
+namespace std{
+	template <>
+	struct hash<Cadena> {
+		size_t operator() (const Cadena& cad) const {
+			hash<string> hs;
+			const char* p = cad.c_str();
+			string s(p);
+			size_t res = hs(s);
+			return res;
+		}
+	};
+}
+
 #endif
