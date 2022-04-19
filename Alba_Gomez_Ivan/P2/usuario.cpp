@@ -12,7 +12,7 @@
 
 using namespace std;
 
-//unordered_set<Cadena> Usuario::registrados;
+unordered_set<Cadena> Usuario::registrados;
 
 Clave::Clave(const char* p){
 	setlocale(LC_ALL, "");
