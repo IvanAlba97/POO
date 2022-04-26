@@ -10,7 +10,7 @@ class Clave;
 
 class Numero {
 public:
-
+	enum Razon { LONGITUD, DIGITOS, NO_VALIDO };
 	class Incorrecto {
 		public:
 			Incorrecto(const Numero::Razon r);
@@ -19,7 +19,6 @@ public:
 			Numero::Razon r_;
 	};
 	
-	enum Razon { LONGITUD, DIGITOS, NO_VALIDO };
 	Numero(const Cadena&);
 	operator const char*() const;
 	const Cadena& num() const { return numero_; }
@@ -39,7 +38,7 @@ public:
 			const Fecha& cuando() const { return fecha_caducada; }
 		private:
 			Fecha fecha_caducada;
-	}
+	};
 
 	class Num_duplicado{
 		public:

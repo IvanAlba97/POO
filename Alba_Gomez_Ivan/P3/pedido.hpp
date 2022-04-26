@@ -51,7 +51,7 @@ private:
 	Fecha fPedido_;
 	double importe_;
 	static unsigned N_pedidos;
-}
+};
 
 std::ostream& operator <<(std::ostream& os, const Pedido& p);
 

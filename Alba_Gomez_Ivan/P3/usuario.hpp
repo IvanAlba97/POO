@@ -14,7 +14,7 @@ class Tarjeta;
 
 class Clave{
 public:
-
+	enum Razon { CORTA, ERROR_CRYPT };
 	class Incorrecta {
 		public:
 			Incorrecta(const Clave::Razon r);
@@ -25,7 +25,7 @@ public:
 
 	Clave(const char*);
 	Cadena clave() const; //devuelve la contraseña cifrada
-	enum Razon { CORTA, ERROR_CRYPT };
+	
 	bool verifica(const char*) const;
 	~Clave();
 private:
