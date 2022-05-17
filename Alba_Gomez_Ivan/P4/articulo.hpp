@@ -23,7 +23,7 @@ private:
 
 class Articulo{
 public:
-	typedef std::set <Autor*> Autores;
+	typedef std::set<Autor*> Autores;
 	Articulo(const Autores& autores, const Cadena& referencia, const Cadena& titulo, const Fecha& fecha_publi, const double precio);
 	const Cadena referencia() const noexcept { return referencia_; }
 	const Cadena& titulo() const noexcept { return titulo_; }
@@ -46,7 +46,8 @@ std::ostream& operator <<(std::ostream& os, const Articulo& ar) noexcept;
 
 class LibroDigital : public Articulo {
 public:
-	LibroDigital(const Autores& autores, const Cadena& referencia, const Cadena& titulo, const Fecha& fecha_publi, const double precio, const Fecha& fExp);
+	LibroDigital(const Autores& autores, const Cadena& referencia, const Cadena& titulo, const Fecha& fecha_publi, const double precio, const Fecha& fExp)
+		: Articulo(autores, referencia, titulo, fecha_publi, precio), f_expir_(fExp) {}
 	const Fecha f_expir() const noexcept { return f_expir_; }
 	void impresion_especifica(std::ostream& os) const;
 private:
@@ -55,7 +56,8 @@ private:
 
 class ArticuloAlmacenable : public Articulo {
 public:
-	ArticuloAlmacenable(const Autores& autores, const Cadena& referencia, const Cadena& titulo, const Fecha& fecha_publi, const double precio, unsigned stock=0);
+	ArticuloAlmacenable(const Autores& autores, const Cadena& referencia, const Cadena& titulo, const Fecha& fecha_publi, const double precio, unsigned stock = 0)
+		: Articulo(autores, referencia, titulo, fecha_publi, precio), stock_(stock) {}
 	const unsigned stock() const noexcept { return stock_; }
 	unsigned& stock() noexcept { return stock_; }
 protected:
@@ -64,7 +66,8 @@ protected:
 
 class Libro : public ArticuloAlmacenable {
 public:
-	Libro(const Autores& autores, const Cadena& referencia, const Cadena& titulo, const Fecha& fecha_publi, const double precio, unsigned paginas, unsigned stock=0);
+	Libro(const Autores& autores, const Cadena& referencia, const Cadena& titulo, const Fecha& fecha_publi, const double precio, unsigned paginas, unsigned stock = 0)
+		: ArticuloAlmacenable(autores, referencia, titulo, fecha_publi, precio, stock), n_pag_(paginas) {}
 	const unsigned n_pag() const noexcept { return n_pag_; }
 	void impresion_especifica(std::ostream& os) const;
 private:
@@ -73,7 +76,8 @@ private:
 
 class Cederron : public ArticuloAlmacenable {
 public:
-	Cederron(const Autores& autores, const Cadena& referencia, const Cadena& titulo, const Fecha& fecha_publi, const double precio, unsigned tamano, unsigned stock=0);
+	Cederron(const Autores& autores, const Cadena& referencia, const Cadena& titulo, const Fecha& fecha_publi, const double precio, unsigned tamano, unsigned stock = 0)
+		: ArticuloAlmacenable(autores, referencia, titulo, fecha_publi, precio, stock), tam_(tamano) {}
 	const unsigned tam() const noexcept { return tam_; }
 	void impresion_especifica(std::ostream& os) const;
 private:

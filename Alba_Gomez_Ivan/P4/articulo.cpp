@@ -22,22 +22,14 @@ std::ostream& operator <<(std::ostream& os, const Articulo& ar) noexcept {
 	return os;
 }
 
-LibroDigital::LibroDigital::LibroDigital(const Autores& autores, const Cadena& referencia, const Cadena& titulo, const Fecha& fecha_publi, const double precio, const Fecha& fExp)
- : Articulo(autores, referencia, titulo, fecha_publi, precio), f_expir_(fExp) {}
-
-Libro::Libro(const Autores& autores, const Cadena& referencia, const Cadena& titulo, const Fecha& fecha_publi, const double precio, unsigned paginas, unsigned stock)
- : ArticuloAlmacenable(autores, referencia, titulo, fecha_publi, precio, stock), n_pag_(paginas) {}
+void LibroDigital::impresion_especifica(ostream& os) const {
+	os << "A la venta hasta el " << f_expir_ << '.';
+}
 
 void Libro::impresion_especifica(ostream& os) const {
 	os << n_pag_ << " págs., " << stock_ << " unidades.";
 }
 
-Cederron::Cederron(const Autores& autores, const Cadena& referencia, const Cadena& titulo, const Fecha& fecha_publi, const double precio, unsigned tamano, unsigned stock)
- : ArticuloAlmacenable(autores, referencia, titulo, fecha_publi, precio, stock), tam_(tamano) {}
-
 void Cederron::impresion_especifica(ostream& os) const {
 	os << tam_ << " MB, " << stock_ << " unidades.";
 }
-
-Autor::Autor(const Cadena& nomb, const Cadena& apell, const Cadena& direcc)
- : nombre_(nomb), apellidos_(apell), direccion_(direcc) {}

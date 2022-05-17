@@ -37,12 +37,15 @@ Pedido::Pedido(Usuario_Pedido& UP, Pedido_Articulo& PA, Usuario& usuario,const T
 	n_p_ = ++ N_pedidos;
 }
 
-std::ostream& operator<<(std::ostream& os, const Pedido& p){
+std::ostream& operator <<(std::ostream& os, const Pedido& p){
 	os << left;
 	os << "Núm. pedido: " << p.numero() << endl;
 	os << setw(13) << "Fecha: " << p.fecha() << endl;
-	os << setw(13) << "Pagado con: " << p.tarjeta()->tipo() << " nº: " << p.tarjeta()->numero() << endl;
+	if(p.tarjeta()->tipo() == Tarjeta::Otro) {
+		os << setw(13) << "Pagado con: " << "Tipo indeterminado" << " n.o: " << p.tarjeta()->numero() << endl;
+	} else {
+		os << setw(13) << "Pagado con: " << p.tarjeta()->tipo() << " n.o: " << p.tarjeta()->numero() << endl;
+	}
 	os << setw(13) << "Importe: " << fixed << setprecision(2) << p.total() << " €" << endl;
 	return os;
 }
-
